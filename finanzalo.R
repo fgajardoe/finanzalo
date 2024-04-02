@@ -3,6 +3,8 @@ library(ggrepel)
 library(readxl)
 library(reshape2)
 library(plotly)
+library(htmlwidgets)
+library(rmarkdown)
 
 
 
@@ -188,8 +190,6 @@ if(input=="excel_list"){
 
 	p.plotly=subplot(p.point,p.bar,nrows=2)
 
-	library(htmlwidgets)
-	library(rmarkdown)
 	saveWidget(p.plotly, outReportHTML,selfcontained=F)
 
 }
