@@ -1,0 +1,5 @@
+*.xls
+*report*
+*.RData
+*.RDS
+*.pdf
