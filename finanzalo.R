@@ -176,10 +176,17 @@ if(input=="excel_list"){
 		#ylim(ylimits) #+xlim(xlimits)
 
 	# plot barras
-	data=data %>% mutate(Month=getMonthStr(Fecha.2)) %>% mutate(Month=factor(Month,levels=c(all_months_str))) %>% mutate(Tipo=ifelse(Descripcion=="Transferencia Desde Linea De Credito","Linea de Sobregiro (CLP)",as.character(Tipo)))
+	data=data %>% mutate(Month=getMonthStr(Fecha.2)) %>% mutate(Month=factor(Month,levels=c(all_months_str))) %>% 
+		mutate(Tipo=ifelse(Descripcion=="Transferencia Desde Linea De Credito",
+				   "Linea de Sobregiro (CLP)",
+				   as.character(Tipo))) %>%
+		mutate(Tipo=ifelse((Descripcion=="Pago Tarjeta De Credito" | Descripcion=="Cargo Por Pago Tc"),
+				   "Tarjeta De Credito",
+				   as.character(Tipo)))
 	months.v=data %>% filter(Month %in% months) %>% unique 
 	pal.bar=pal
 	pal.bar["Linea de Sobregiro (CLP)"]="#fdae61"
+	pal.bar["Tarjeta De Credito"]="#8073ac"
 	p.bar=data %>% ggplot(aes(x=Month,y=Monto,fill=Tipo,label=Descripcion))+geom_bar(stat="identity",position="dodge",width=0.8)+theme_classic()+scale_fill_manual(values=pal.bar)
 
 
