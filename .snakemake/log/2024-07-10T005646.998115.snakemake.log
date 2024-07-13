@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	run_script
+	1
+Select jobs to execute...
+
+[Wed Jul 10 00:56:47 2024]
+rule run_script:
+    input: CARTOLAS_2024.lst
+    output: CARTOLAS_2024.lst.report.html
+    jobid: 0
+
+docker run -it -v `pwd`:/home/user -w /home/user/ fgajardoe/r-custom:latest Rscript finanzalo.R CARTOLAS_2024.lst
+[Wed Jul 10 00:56:51 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/felip/dump/finanzalo/.snakemake/log/2024-07-10T005646.998115.snakemake.log
