@@ -1,4 +1,4 @@
-# finanzalo
+# Finanzalo
 Un script en R para visualizar tus finanzas.
 
 Mas concretamente, genera reportes en `PDF` y visualizaciones interactivas en `html` utiles para visualizar en que y cuando gastas tu dinero. Como nació como un proyecto personal, hasta ahora solo reconoce el formato `xls` que se descarga del Banco de Chile, pero adaptarlo a otros bancos es totalmente posible.
@@ -41,3 +41,9 @@ cartola_14-02-2024_30-03-2024.xls
 Aqui podemos destacar varias cosas. Primero, que el script soporta fechas sobrelapadas, por lo que no tendras que preocuparte por transacciones duplicadas. Segundo, puedes comentar archivos `xls` para que sean ignorados del análisis. 
 
 Finalmente, es buena idea tener un archivo de cartolas (`.lst`) por año, porque sino el eje x crece mucho y no se nota, pero ustedes hagan lo que quieran.
+
+
+# Snakemake
+
+Si lo prefieres, puedes ejecutar el script utilizando Snakemake. Para esto, debes proporcionar el archivo `.lst` en el archivo `config.yaml`, configurando la variable `Lista_de_cartolas`.
+
