@@ -47,3 +47,10 @@ Finalmente, es buena idea tener un archivo de cartolas (`.lst`) por año, porque
 
 Si lo prefieres, puedes ejecutar el script utilizando Snakemake. Para esto, debes proporcionar el archivo `.lst` en el archivo `config.yaml`, configurando la variable `Lista_de_cartolas`.
 
+Y para correrlo:
+
+```
+snakemake -npj1 
+```
+
+That's all folks!
